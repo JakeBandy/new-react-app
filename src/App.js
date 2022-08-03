@@ -10,10 +10,10 @@ class App extends React.Component {
       isClicked: false,
       todos: [{id: 1, todo:"walk fish"},
               {id: 2, todo: "water roof"}, 
-              {id: 3, 'feed dragon'},
+              {id: 3, todo:'feed dragon'},
             ],
           },
-      text: ''
+      text = '';
     }
 
   }
@@ -42,18 +42,18 @@ class App extends React.Component {
     this.setState({todos: [...copyOfList]})
   }
 
-  componentDidUpdate() {
+  componentDidUpdate = () => {
     console.log(this.state.todos)
   }
 
 
 
-  render() {
+  render = () => {
     return (
       <div className="app">
       <h2>Todos</h2>
       <input type="text" onChange={this.handleChange} value={this.state.text}/>
-      {/* <button onClick={this.handleClick}>{this.isClicked ? 'Toggle' : 'Untoggle'}</button> */}
+      { <button onClick={this.handleClick}>{this.isClicked ? 'Toggle' : 'Untoggle'}</button> }
       <button onClick={this.handleSubmit}>Submit</button>
       <ul>
       {
